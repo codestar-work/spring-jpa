@@ -1,21 +1,13 @@
-create database airport default charset=utf8;
-create user 'airport'@'localhost' identified by 'password';
-grant all on airport.* to 'airport'@'localhost';
--- set password for 'airport'@'localhost' = password('');
+create database coffee_shop default charset=utf8;
+create user 'coffee'@'%' identified by 'password';
+grant all on coffee_shop.* to 'coffee'@'%';
 
-use airport;
-create table airport (
+use coffee_shop;
+create table coffee (
   id      serial,
-  code    nvarchar(64),
-  name    nvarchar(200),
-  city    nvarchar(200),
-  country nvarchar(200)
+  name    varchar(255),
+  size    char,
+  price   real
 );
 
-insert into airport(code, name, city, country)
-values('BKK', 'Suvarnabhumi', 'Bangkok', 'Thailand');
-insert into airport(code, name, city, country)
-values('DMK', 'Don Muang', 'Bangkok', 'Thailand');
-insert into airport(code, name, city, country)
-values('CNX', 'Chiang Mai', 'Chiang Mai', 'Thailand');
-
+insert into coffee (name, size, price) values('Latte', 'T', 110); 
