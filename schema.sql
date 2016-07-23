@@ -10,4 +10,9 @@ create table coffee (
   price   real
 );
 
-insert into coffee (name, size, price) values('Latte', 'T', 110); 
+insert into coffee (name, size, price) values('Latte', 'T', 110);
+insert into coffee (name, size, price) values('Latte', 'G', 125);
+insert into coffee (name, size, price) values('Latte', 'V', 140);
+insert into coffee (name, size, price) values('Cappuccino', 'T', 110);
+insert into coffee (name, size, price) values('Cappuccino', 'G', 125);
+insert into coffee (name, size, price) values('Cappuccino', 'V', 140);

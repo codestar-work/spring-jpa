@@ -1,11 +1,11 @@
 package web;
+import java.sql.*;
+import java.util.*;
+import org.springframework.ui.*;
+import org.springframework.jdbc.core.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.*;
-
-import java.sql.*;
-import java.util.*;
-import org.springframework.jdbc.core.*;
 
 @Controller
 public class Web {
@@ -13,13 +13,17 @@ public class Web {
 	String home() {
 		return "index";
 	}
+
+	@RequestMapping("/demo")
+	String demo() {
+		return "demo.jsp";
+	}
 	
 	@Autowired
 	private CoffeeRepository coffee;
 	
 	@RequestMapping("/list") @ResponseBody
-	Iterable list() {
-		return coffee.findAll();
+	List list() {
+		return coffee.list();
 	}
-	
 }

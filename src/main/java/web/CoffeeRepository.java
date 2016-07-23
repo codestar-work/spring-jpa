@@ -6,5 +6,8 @@ import org.springframework.data.jpa.repository.*;
 
 public interface 
 CoffeeRepository extends CrudRepository<Coffee, Long> {
-	Coffee findOneByName(String name);
+	List findBySize(Character c);
+
+	@Query("select c from Coffee c")
+	List list();
 }
